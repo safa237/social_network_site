@@ -104,17 +104,6 @@ function getPosts(reload = true, page = 1)
             const currentPostTagsId = `post-tags-${post.id}`
             document.getElementById(currentPostTagsId).innerHTML = ""
 
-            for(tag of post.tags)
-            {
-                console.log(tag.name)
-                let tagsContent = 
-                `
-                    <button class="btn btn-sm rounded-5" style="background-color: gray; color: white">
-                            ${tag.name}
-                    </button>
-                `
-                document.getElementById(currentPostTagsId).innerHTML += tagsContent
-            }
         }
     })
 
