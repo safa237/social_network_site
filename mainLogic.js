@@ -58,19 +58,7 @@ function createNewPostClicked() {
     
 }
 
-function editPostBtnClicked(postObject)
-{
-    let post = JSON.parse(decodeURIComponent(postObject))
-    console.log(post)
-    
-    document.getElementById("post-modal-submit-btn").innerHTML = "Update"
-    document.getElementById("post-id-input").value = post.id
-    document.getElementById("post-modal-title").innerHTML = "Edit Post"
-    document.getElementById("post-title-input").value = post.title
-    document.getElementById("post-body-input").value = post.body
-    let postModal = new bootstrap.Modal(document.getElementById("create-post-modal"), {})
-    postModal.toggle()
-}
+
 
 function deletePostBtnClicked(postObject)
 {
