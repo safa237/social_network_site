@@ -50,19 +50,6 @@ function getPosts(reload = true, page = 1)
             const author = post.author
             let postTitle = ""
 
-            // show or hide (edit) button
-            let user = getCurrentUser()
-            let isMyPost = user != null && post.author.id == user.id
-            let editBtnContent = ``
-
-            if(isMyPost){
-                editBtnContent = 
-                `
-                    <button class='btn btn-danger' style='margin-left: 5px; float: right' onclick="deletePostBtnClicked('${encodeURIComponent(JSON.stringify(post))}')">delete</button>
-
-                `
-            }
-
             if(post.title != null)
             {
                 postTitle = post.title
@@ -75,8 +62,6 @@ function getPosts(reload = true, page = 1)
                             <img class="rounded-circle border border-2" src="${author.profile_image}" alt="" style="width: 40px; height: 40px">
                             <b>${author.username}</b>
                         </span>
-
-                        ${editBtnContent}
                         
                     </div>
                     <div class="card-body" onclick="postClicked(${post.id})" style="cursor: pointer">
